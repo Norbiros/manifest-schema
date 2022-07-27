@@ -769,6 +769,32 @@
 			},
 			"minItems": 1
 		},
+		"seeAlso": {
+			"type": "array",
+			"description": "List of addons that have similar usage to specific addon.",
+			"items": {
+				"type": "object",
+				"description": "Mentioned addon.",
+				"properties": {
+					"addon": {
+						"type": "string",
+						"description": "The id of addon that you are referencing to.",
+						"minLength": 1
+					},
+					"description": {
+						"type": "string",
+						"description": "The description of addon. If it is not set it uses first sentence of other addon's description."
+					},
+					"showInList": {
+						"type": "boolean",
+						"description": "."
+					}
+				}
+				"required": ["addon"],
+				"additionalProperties": false
+			},
+			"minItems": 1
+		},
 		"enabledByDefault": {
 			"type": "boolean",
 			"description": "You can provide the \"enabledByDefault\" property and set it to true. Its default value is false.\nKeep in mind, few addons will be enabled by default. If you want your addon to be enabled by default, please open a discussion issue.",
